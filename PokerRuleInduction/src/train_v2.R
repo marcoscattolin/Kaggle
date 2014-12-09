@@ -1,3 +1,4 @@
+setwd("~/GitHub/Kaggle/PokerRuleInduction/src")
 library(dplyr)
 library(caret)
 
@@ -5,7 +6,7 @@ library(caret)
 
 
 # LOAD DATA ---------------------------------------------------------------
-train <- read.csv("./input/train.csv")
+train <- read.csv("../input/train.csv")
 train <- tbl_df(train)
 train <- mutate(train, hand = factor(hand))
 

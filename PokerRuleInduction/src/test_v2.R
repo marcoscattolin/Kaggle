@@ -1,9 +1,10 @@
+setwd("~/GitHub/Kaggle/PokerRuleInduction/src")
 library(dplyr)
 library(caret)
 
 
 # LOAD DATA ---------------------------------------------------------------
-test <- read.csv("test.csv")
+test <- read.csv("../input/test.csv")
 test <- tbl_df(test)
 
 suitsix <- seq(2,11,by=2)
