@@ -30,16 +30,16 @@ tmp <- tbl_df(as.data.frame(t(tmp)))
 colnames(tmp) <- paste0("suit_",colnames(tmp))
 test <- cbind(test,tmp)
 save(test,file="./tmp/test_features.rda")
-#load("./tmp/test_features.rda")
+#load("../tmp/test_features.rda")
 
 
 # EXTRACT RESULTS -------------------------------------------------------------
-load("./tmp/rf.rda")
+load("../tmp/rf.rda")
 predictions <- predict(rf, newdata=test[,12:33])
 
 
 
 # WRITE OUTPUT -----------------------------------------------------------------
 out <- data.frame(id = test$id, hand = predictions)
-write.table(out, "submission_scattolin.csv", quote=F, sep=",", col.names=T,row.names=F)
+write.table(out, "../out/submission_scattolin.csv", quote=F, sep=",", col.names=T,row.names=F)
 
